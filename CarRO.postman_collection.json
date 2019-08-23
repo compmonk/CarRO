@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "3d309381-daa6-47ac-9079-62206adac5c0",
+		"name": "CarRO",
+		"description": "Car Repair Order management tool\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Repair Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"vehicle\": {\n\t\t\"make\": \"Honda\",\n\t\t\"model\": \"Civic\",\n\t\t\"license_no\": \"AXT901\"\n\t},\n\t\"customer\": {\n\t\t\"name\": \"John Doe\",\n\t\t\"email_id\": \"johndoe@organization.com\",\n\t\t\"mobile_no\": \"9876543210\"\n\t},\n\t\"complaint\": \"Crackling noise from engine box\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/repair/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"repair",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repair Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/repair/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"repair",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repair Order by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/repair/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"repair",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Repair Order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"status\": \"REPAIRING\",\n    \"complaint\": \"Crackling noise from the engine\",\n    \"vehicle\": {\n        \"make\": \"Honda\",\n        \"model\": \"Civic\",\n        \"license_no\": \"AXT901\"\n    },\n    \"customer\": {\n        \"name\": \"John Doe\",\n        \"email_id\": \"johndoe@organization.com\",\n        \"mobile_no\": \"9876543210\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/repair/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"repair",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Repair Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/repair/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"repair",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
