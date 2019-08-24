@@ -25,3 +25,14 @@ class RepairOrder(Document):
     customer = EmbeddedDocumentField(Customer)
     status = StringField(choices=states, default="ORDERED")
     complaint = StringField(max_length=300)
+
+    def is_valid_transition(self, to_state):
+        if self.status == "ORDERED":
+            return to_state == "REPAIRING"
+        if self.status == "REPAIRING":
+            return to_state == "REPAIRED"
+        if self.status == "REPAIRED":
+            return to_state == "REVIEWING"
+        if self.status == "REVIEWING":
+            return to_state in ["REPAIRING", "DONE"]
+        return False
