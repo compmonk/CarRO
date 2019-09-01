@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CarRO</title>
+
+    <!-- jQuery-->
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+
+    <!-- Angular JS-->
+    <script src="{% static 'vendor/angular/angular.min.js' %}"></script>
+
+    <!-- Angular ngRoute-->
+    <script src="{% static 'vendor/angular-route/angular-route.min.js' %}"></script>
+
+    <!-- moment js-->
+    <script src="{% static 'vendor/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/angular-moment/angular-moment.min.js' %}"></script>
+
+    <!-- Bootstrap-->
+    <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    <!-- Custom styles-->
+    <link href="{% static 'css/carRO.css' %}" rel="stylesheet">
+
+    <!-- Custom JS-->
+    <script src="{% static 'js/carRO.js' %}"></script>
+    <script src="{% static 'js/boardController.js' %}"></script>
+    <script src="{% static 'js/createController.js' %}"></script>
+    <script src="{% static 'js/updateController.js' %}"></script>
+</head>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Car Repair Order and Management Tool</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#board">Board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#add">Add</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body ng-app="carRO">
+<div>
+    <div id="routedContent" ng-view></div>
+</div>
+
+</body>
+</html>
