@@ -28,6 +28,7 @@ class RepairOrderSerializer(DocumentSerializer):
         return super(RepairOrderSerializer, self).create(validated_data)
 
     def update(self, instance, validated_data):
+        validated_data.pop('date')
         to_state = validated_data.pop('status')
         if instance.is_valid_transition(to_state):
             instance.status = to_state
