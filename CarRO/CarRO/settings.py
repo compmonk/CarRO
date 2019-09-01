@@ -58,7 +58,7 @@ ROOT_URLCONF = 'CarRO.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,7 @@ mongoengine.connect(
     host="localhost:27017",
     alias="default"
 )
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]

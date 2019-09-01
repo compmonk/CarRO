@@ -1,0 +1,92 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.carousel-item {
+    height: 40vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 1200px) {
+    body > div > div > div > div.container {
+        min-height: 482px;
+    }
+
+    body > div > div > div > div > div > div {
+        padding-top: 75px;
+        border: 2px;
+    }
+
+    .card-body {
+        min-height: 164px;
+    }
+
+    body > div > div > div {
+        min-height: 878px;
+    }
+
+    .button {
+        text-align: center;
+        padding: 15px;
+        padding-left: 600px;
+        padding-right: 600px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    body > div > div > div > div > div > div {
+        padding-top: 20px;
+    }
+
+    .card-body {
+        min-height: 164px;
+    }
+}
+
+tr {
+    cursor: pointer;
+}
+
+.ORDERED {
+    background-color: #eeeeee;
+}
+
+.REPAIRING {
+    background-color: #dddddd;
+}
+
+.REPAIRED {
+    background-color: #cccccc;
+}
+
+.REVIEWING {
+    background-color: #bbbbbb;
+}
+
+.DONE {
+    background-color: #aaaaaa;
+}

@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <form id="repairOrderForm">
+        <!-- Customer-->
+        <div class="form-group col-sm-4" id="customer">
+            <label for="customer" class="form-control-label center-block">Customer Details:</label>
+            <!-- Name-->
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="customer-name" class="form-control-label col-2">Name:</label>
+                    <input type="text" class="form-control" id="customer-name"
+                           ng-model="repairOrder.customer.name" required>
+                </div>
+            </div>
+
+            <!-- Email-->
+            <div class=form-group>
+                <div class="input-group">
+                    <label for="customer-email" class="form-control-label col-2">Email:</label>
+                    <input type="email" class="form-control" id="customer-email"
+                           ng-model="repairOrder.customer.email_id" required>
+                </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class=form-group>
+                <div class="input-group">
+                    <label for="customer-mobile" class="form-control-label col-2">Mobile:</label>
+                    <input type="tel" class="form-control" id="customer-mobile"
+                           ng-model="repairOrder.customer.mobile_no" required minlength="10" maxlength="10">
+                </div>
+            </div>
+
+            <hr>
+        </div>
+
+        <!-- Vehicle-->
+        <div class="form-group col-sm-4" id="vehicle">
+            <label for="vehicle">Vehicle Details:</label>
+            <!-- Make-->
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="vehicle-make" class="form-control-label col-2">Make:</label>
+                    <input type="text" class="form-control" id="vehicle-make"
+                           ng-model="repairOrder.vehicle.make" required>
+                </div>
+            </div>
+
+            <!-- Model-->
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="vehicle-model" class="form-control-label col-2">Model:</label>
+                    <input type="text" class="form-control" id="vehicle-model"
+                           ng-model="repairOrder.vehicle.model" required>
+                </div>
+            </div>
+
+            <!-- License No -->
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="vehicle-license_no" class="form-control-label col-2">License No:</label>
+                    <input type="text" class="form-control" id="vehicle-license_no"
+                           ng-model="repairOrder.vehicle.license_no" required>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+        <!-- Complaint -->
+        <div class="form-group col-sm-4">
+            <label for="complaint" class="form-control-label">Complaint:</label>
+            <textarea type="text" class="form-control" id="complaint"
+                      ng-model="repairOrder.complaint" required maxlength="300">
+            </textarea>
+            <hr>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" id="submit" ng-click="add()">
+                Add
+            </button>
+        </div>
+    </form>
+</div>
