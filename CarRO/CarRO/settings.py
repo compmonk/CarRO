@@ -26,8 +26,7 @@ SECRET_KEY = '&yl+n27)(12ir$i+$-$!rvsiiz1!sh_+_o2_7lh4q-w_pb($vy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -72,7 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'CarRO.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -126,7 +124,9 @@ STATIC_URL = '/static/'
 mongoengine.connect(
     db="CarRO",
     host="localhost:27017",
-    alias="default"
+    alias="default",
+    username="root",
+    password="password"
 )
 
 STATICFILES_DIRS = [
