@@ -16,11 +16,10 @@
         $scope.edit = function () {
             $http.put('/repair/' + $scope.repairOrder.id, $scope.repairOrder).then(
                 function (response) {
-                    console.log(response);
                     $location.path('#/board')
                 },
                 function () {
-                    console.log("Could not add repair orders")
+                    console.log("Could not edit the repair order")
                 }
             );
         };
@@ -28,11 +27,10 @@
         $scope.delete = function () {
             $http.delete('/repair/' + $scope.repairOrder.id).then(
                 function (response) {
-                    console.log(response);
                     $location.path('#/board')
                 },
                 function () {
-                    console.log("Could not add repair orders")
+                    console.log("Could not delete the repair order")
                 }
             );
         };

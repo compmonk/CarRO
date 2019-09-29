@@ -19,7 +19,7 @@ states = ("ORDERED", "REPAIRING", "REPAIRED", "REVIEWING", "DONE")
 
 
 class RepairOrder(Document):
-    id = SequenceField(primary_key=True, unique=True)
+    id = SequenceField(primary_key=True)
     date = DateTimeField(default=timezone.now)
     vehicle = EmbeddedDocumentField(Vehicle)
     customer = EmbeddedDocumentField(Customer)
