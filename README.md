@@ -26,8 +26,7 @@ virtualenv -p /usr/bin/python3 venv
 source venv/bin/activate
 pip install -r requirements/base.txt
 mongo CarRO db/createUser.js
-mongoimport -d CarRO -c repair_order db/CarRO.repair_order.json
-mongoimport -d CarRO -c mongoengine.counters db/CarRO.mongoengine.counters.json
+mongorestore -d CarRO db/CarRO
 python python CarRO/manage.py runserver 0.0.0.0:8000
 ```
 
