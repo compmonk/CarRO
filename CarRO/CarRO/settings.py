@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -44,11 +44,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -120,15 +120,21 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
-mongoengine.connect(
-    db="CarRO",
-    host="localhost:27017",
-    alias="default",
-    username="root",
-    password="password"
-)
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+if os.getenv('GAE_APPLICATION', None):
+    mongoengine.connect(
+        db="CarRO",
+        host="mongodb+srv://root:admin@cluster0-5d4lf.gcp.mongodb.net/CarRO",
+        alias="default",
+        username="root",
+        password="admin"
+    )
+else:
+    mongoengine.connect(
+        db="CarRO",
+        host="localhost:27017",
+        alias="default",
+        username="root",
+        password="password"
+    )
