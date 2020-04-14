@@ -6,7 +6,6 @@
         $scope.add = function () {
             $http.post('/repair/', $scope.repairOrder).then(
                 function (response) {
-                    console.log(response);
                     $location.path('#/board')
                 },
                 function () {

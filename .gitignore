@@ -132,3 +132,6 @@ ENV/
 .*/static/vendor/
 
 *.odt
+/node_modules/
+/CarRO/static/vendor/
+/CarRO/static/css/
